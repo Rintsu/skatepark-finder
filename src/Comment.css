@@ -1,0 +1,23 @@
+input, textarea {
+	font-family: 'Quantico', sans-serif;
+}
+#name {
+	height: 5vmin;
+	width: 50vmin;
+	margin-bottom: 0.5em;
+}
+#comment {
+	height: 30vmin;
+	width: 50vmin;
+	resize: none;
+}
+#submit-btn{
+	width: 10vmin;
+	height: 5vmin;
+	background-color: #C4C4C4;
+	border: 1px solid white;
+	border-radius: 0.2em;
+	font-size: 3vmin;
+	text-align: center;
+	margin: 5px;
+}
