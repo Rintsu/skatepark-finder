@@ -5,6 +5,7 @@ class Comment extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
+			comments: [],
 			name: '',
 			comment: '',
 			fullComment: '',
@@ -27,7 +28,8 @@ class Comment extends Component {
 		let fullComment = this.state.name + ' wrote: ' + this.state.comment;
 		this.setState({
 			date: date,
-			fullComment: fullComment
+			fullComment: fullComment,
+			comments: [date, <br />, fullComment, <br />, ...this.state.comments]
 		});
 	}
 
@@ -36,13 +38,33 @@ class Comment extends Component {
 			<div>
 				<h2>Comment on {this.props.name}</h2>
 				<form>
-					<input id="name" value={this.state.name} onChange={this.handleNameChange} type="text" placeholder="Your name"/> <br></br>
-					<textarea id="comment" value={this.state.comment} onChange={this.handleCommentChange} type="text" placeholder="Write your comment here"/> <br></br>
-					<input id="submit-btn" onClick={this.handleSubmit} type="button" value="Post" />
+					<input
+						id="name"
+						value={this.state.name}
+						onChange={this.handleNameChange}
+						type="text"
+						placeholder="Your name"
+					/> <br></br>
+
+					<textarea
+						id="comment"
+						value={this.state.comment}
+						onChange={this.handleCommentChange}
+						type="text"
+						placeholder="Write your comment here"
+					/> <br></br>
+
+					<input
+						id="submit-btn"
+						onClick={this.handleSubmit}
+						type="button"
+						value="Post"
+					/>
 				</form>
 				<p>Comments:</p>
-				{this.state.date} <br />
-				{this.state.fullComment}
+				<div>
+					{this.state.comments}
+				</div>
 			</div>
 		);
 	}
