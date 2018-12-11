@@ -3,17 +3,8 @@ import Select from 'react-select';
 import LocationInfo from './StatelessLocation';
 import locationOptions from './locationOptions.js';
 
-//https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
-//http://www.mattmorgante.com/technology/dropdown-with-react
-//Check these later on for looping the dropdown list items
-const options = [
-	{ value: locationOptions[0].name, label: locationOptions[0].name},
-	{ value: locationOptions[1].name, label: locationOptions[1].name},
-	{ value: locationOptions[2].name, label: locationOptions[2].name},
-	{ value: locationOptions[3].name, label: locationOptions[3].name},
-	{ value: locationOptions[4].name, label: locationOptions[4].name},
-	{ value: locationOptions[5].name, label: locationOptions[5].name}
-];
+//Mapping all the dropdown menu options
+const options = locationOptions.map( location => ({ label: location.name, value: location.name }));
 
 let skateParkElement;
 
