@@ -1,31 +1,32 @@
 import React, { Component } from 'react';
 import './index.css';
 import './CommentButton.css';
-import Comment from './Comment';
-
-let commentElement;
+import CommentForm from './CommentForm';
 
 class CommentButton extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			clicked: false
+			isHidden: false
 		};
 	}
-	handleChange = () => {
-		this.setState(prevState => ({
-			clicked: !prevState.clicked
-		}));
-		//name prop was given to CommentButton in StatelessLocation.js and now passed on to Comment
-		//so that we can use the current selected skatepark name in the header
-		commentElement = <Comment name={this.props.name} />;
+	
+	toggleHidden = () => {
+		this.setState({
+			isHidden: !this.state.isHidden
+		});
 	}
+
+	//name prop was given to CommentButton in StatelessLocation.js and now passed on to CommentForm
+	//so that we can use the current selected skatepark name in the header
 
 	render(){
 		return(
 			<div>
-				<button onClick={this.handleChange}>Comment this skatepark</button>
-				{commentElement}
+				{ this.state.isHidden ?
+					<CommentForm name={this.props.name} /> :
+					<button onClick={this.toggleHidden}>Comment this skatepark</button>
+				}
 			</div>
 		)
 	}
