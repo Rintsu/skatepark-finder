@@ -1,6 +1,6 @@
 # Skatepark-finder project
 With this app you can search skateparks in Helsinki Metropolitan Area.
-You will find information about addresses, materials used, if there are lights or entrance fees etc.
+You will find information such as addresses, materials used, if there are lights or entrance fees etc.
 
 ## Getting started
 
@@ -14,10 +14,16 @@ You will find information about addresses, materials used, if there are lights o
 	- remember to include your project folder name in the command e.g. `create-react-app awesome-app`
 - run `npm install react-select`
  	- this allows us to use the select component
-- run `npm install react-router-dom`
-	 - this allows us to use the router component
+- run `npm install express`
+	- for creating our backend with Express
+- run `npm install mysql`
+	- for our database
+- run `npm install cors`
 
-## Start server
+## Start your server and app
+```shell
+node server
+```
 ```shell
 npm start
 ```
@@ -29,6 +35,7 @@ npm run build
 
 ## Build With
 - ReactJS
+- Node & Express
 
 ## To be implemented
 - Map that shows all the skateparks
