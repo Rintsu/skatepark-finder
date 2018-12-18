@@ -11,3 +11,19 @@ button {
 }
 /*importing google fonts*/
 @import url('https://fonts.googleapis.com/css?family=Quantico');
+
+.App-logo {
+  height: 40vmin;
+}
+.App-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.dropdown {
+	text-align: center;
+}
+.locationInfo {
+	text-align: center;
+}
